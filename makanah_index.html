@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050509">
+<title>For Makanah❤️ — Before You Go</title>
+<style>
+:root{--bg:#050509;--fg:#f7f4ed;--muted:#9b9aa5;--line:rgba(255,255,255,.13);--glass:rgba(255,255,255,.055)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+canvas{position:fixed;inset:0;z-index:-2}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.06),transparent 35%);z-index:-1}
+.page{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:28px}
+.center{text-align:center;max-width:700px;width:100%}
+.eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+h1,h2{font-family:Georgia,serif;font-weight:400}
+h1{font-size:clamp(68px,19vw,150px);margin:20px 0 8px;line-height:.9}
+.subtitle{color:#b9b7bf;line-height:1.8;font-size:16px;max-width:520px;margin:25px auto}
+.scroll{margin-top:55px;color:#777783;font-size:11px;letter-spacing:.22em;text-transform:uppercase;animation:updown 2s infinite}
+@keyframes updown{50%{transform:translateY(8px)}}
+
+#intro{transition:opacity .7s,transform .7s}
+.envelope-wrap{margin:35px auto 0;display:flex;justify-content:center}
+.envelope{position:relative;width:min(330px,85vw);height:215px;cursor:pointer;filter:drop-shadow(0 25px 35px rgba(0,0,0,.45))}
+.env-back{position:absolute;inset:0;background:#15151d;border:1px solid var(--line);border-radius:8px}
+.flap{position:absolute;left:0;top:0;width:0;height:0;border-left:165px solid transparent;border-right:165px solid transparent;border-top:112px solid #22222b;transform-origin:top;transition:transform .9s;z-index:3}
+.letter-paper{position:absolute;left:10%;top:20px;width:80%;height:170px;background:#f2eee5;color:#18171b;border-radius:3px;padding:22px;font-family:Georgia,serif;z-index:2;transition:transform 1s;box-shadow:0 8px 25px #0006}
+.envelope.open .flap{transform:rotateX(180deg)}
+.envelope.open .letter-paper{transform:translateY(-105px)}
+.letter-paper strong{font-size:22px;font-weight:400}
+.tap{position:absolute;bottom:-45px;left:0;right:0;text-align:center;color:#777783;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+
+section{max-width:820px;margin:auto;padding:110px 24px}
+.reveal{opacity:0;transform:translateY(35px);transition:1s ease}
+.reveal.show{opacity:1;transform:none}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:26px;padding:32px;backdrop-filter:blur(12px)}
+.big-letter{font-family:Georgia,serif;font-size:clamp(18px,3vw,22px);line-height:1.9;color:#e9e5dc}
+.big-letter p{margin:0 0 22px}
+.signature{font-style:italic;margin-top:35px}
+.chapter{font-size:11px;color:#777783;letter-spacing:.22em;text-transform:uppercase;margin-bottom:25px}
+h2{font-size:clamp(40px,9vw,76px);line-height:1.05;margin:0 0 25px}
+.quote{font-family:Georgia,serif;font-size:clamp(25px,6vw,45px);line-height:1.35;color:#e9e6df;text-align:center}
+.moments{display:grid;gap:12px;margin-top:30px}
+.moment{border:1px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(110deg,rgba(255,255,255,.055),transparent)}
+.moment span{display:block;color:var(--muted);line-height:1.6;margin-top:7px}
+.timeline{position:relative;margin:35px 0 0;padding-left:25px;border-left:1px solid rgba(255,255,255,.2)}
+.step{padding:0 0 38px 25px;position:relative}
+.step:before{content:"";position:absolute;left:-30px;top:5px;width:9px;height:9px;border-radius:50%;background:#eee;box-shadow:0 0 16px #fff}
+.step b{font-size:18px}.step p{color:var(--muted);line-height:1.7}
+.counter{font-variant-numeric:tabular-nums;font-size:clamp(42px,10vw,80px);font-family:Georgia,serif;margin:20px 0}
+.final{text-align:center;min-height:100svh;display:flex;align-items:center;justify-content:center}
+.final p{max-width:550px;margin:auto;color:var(--muted);line-height:1.8}
+button{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:15px 22px;font-size:14px;cursor:pointer;margin-top:28px}
+button:active{transform:scale(.97)}
+.secret{max-height:0;overflow:hidden;transition:max-height 1s ease,opacity 1s;padding:0;opacity:0}
+.secret.visible{max-height:400px;opacity:1;padding:30px;margin-top:22px}
+.secret .quote{font-size:25px}
+footer{text-align:center;padding:20px 20px 65px;color:#5e5e69;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+#typed{border-right:1px solid #aaa;white-space:pre-wrap}
+@media(max-width:500px){section{padding:85px 17px}.glass{padding:23px}.flap{border-left-width:42.5vw;border-right-width:42.5vw}.letter-paper{font-size:13px}}
+
+.opening-message{
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.25rem, 4.5vw, 1.7rem);
+  line-height: 1.65;
+  text-align: center;
+  margin: 1.5rem auto 2rem;
+  max-width: 34rem;
+}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+
+<main>
+<section class="page" id="intro">
+<div class="center">
+<div class="eyebrow">A message before you leave</div>
+<h1>Makanah❤️.</h1>
+<p class="subtitle">I wanted to give you something you could keep — not a picture, not a gift, just a few words from someone in Zimbabwe wishing you well in Australia.</p>
+<div class="envelope-wrap">
+<div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open the letter">
+<div class="env-back"></div>
+<div class="letter-paper">
+<p class="opening-message">Just wanna give you something you could keep, not a gift just a few words from Dickson😭❤️ wishing you well for your new journey ahead</p>
+<strong>For Makanah❤️</strong><br><br>A little something before your next chapter begins.</div>
+<div class="flap"></div>
+<div class="tap">Tap to open</div>
+</div>
+</div>
+<div class="scroll">scroll after opening ↓</div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="chapter">01 — The letter</div>
+<div class="glass big-letter">
+<p>Makanah❤️,</p>
+<p>There’s something a little strange about saying goodbye to someone I never got to meet in person.</p>
+<p>We never got the simple memories — a random conversation that lasted too long, laughing at something nobody else understood, or one ordinary day that somehow became a day worth remembering.</p>
+<p>And yet, here we are. You’re leaving for Australia, and I still wanted you to know that someone here is genuinely wishing you well.</p>
+<p>I hope this new chapter surprises you in the best ways. I hope you find places that feel like home, people who make you laugh, and opportunities that take you further than you imagined.</p>
+<p>Don't be afraid of the unfamiliar. Sometimes the biggest chapters begin with the scariest first step.</p>
+<p>And who knows? Maybe “never met” is only a temporary sentence.</p>
+<div class="signature">— Tatenda 🤍</div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="chapter">02 — Things left unsaid</div>
+<div class="quote">“Some goodbyes are really just pauses in a story that hasn't finished yet.”</div>
+<div class="moments">
+<div class="moment"><b>I wish we'd had more time.</b><span>Not because we had to make everything meaningful — just because sometimes ordinary time with someone becomes the part you remember most.</span></div>
+<div class="moment"><b>I hope you don't forget Zimbabwe.</b><span>Not the place itself, but the little things, the people, the moments and the version of yourself that existed here.</span></div>
+<div class="moment"><b>And I hope Australia is good to you.</b><span>New roads. New faces. New stories. I hope you find plenty of reasons to smile.</span></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="chapter">03 — Your next chapter</div>
+<h2>Zimbabwe → Australia</h2>
+<div class="timeline">
+<div class="step"><b>Leave something behind.</b><p>The familiar streets, familiar faces and the life you've known.</p></div>
+<div class="step"><b>Take the memories with you.</b><p>Not everything has to come in a suitcase. Some things travel quietly in your heart.</p></div>
+<div class="step"><b>Start again.</b><p>Meet people. Explore places. Make mistakes. Laugh loudly. Become someone even you haven't met yet.</p></div>
+<div class="step"><b>Look back someday.</b><p>And remember that before the next chapter began, someone was cheering you on from here.</p></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="chapter">04 — While you're away</div>
+<div class="glass" style="text-align:center">
+<p style="color:#aaa;line-height:1.7">Distance has a funny way of changing how we think about time.</p>
+<div class="counter" id="counter">00:00:00</div>
+<p>This clock isn't counting down to goodbye.<br>It's counting forward to all the moments still waiting for you.</p>
+</div>
+</section>
+
+<section class="final reveal">
+<div class="center">
+<div class="eyebrow">05 — One last thing</div>
+<h2>Go make it beautiful.</h2>
+<p>Makanah❤️, wherever this new chapter takes you, I hope you walk into it knowing that you are wished well.</p>
+<p style="margin-top:20px">Safe travels. 🇿🇼 → 🇦🇺</p>
+<button id="secretBtn">Open the last message</button>
+<div class="secret glass" id="secret">
+<div class="quote">“Maybe our paths were simply taking the long way around.”</div>
+<p style="margin-top:22px">So this isn't really goodbye.</p>
+<p>It's just <i>until our paths cross.</i></p>
+<p>— Tatenda 🤍</p>
+</div>
+</div>
+</section>
+</main>
+
+
+<script>
+const envelope=document.getElementById('envelope');
+function openEnvelope(){envelope.classList.add('open')}
+envelope.addEventListener('click',openEnvelope);
+envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')openEnvelope()});
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+
+document.getElementById('secretBtn').onclick=()=>{
+ const s=document.getElementById('secret');
+ s.classList.toggle('visible');
+ document.getElementById('secretBtn').textContent=s.classList.contains('visible')?'Close the message':'Open the last message';
+};
+
+let start=Date.now();
+setInterval(()=>{
+ const sec=Math.floor((Date.now()-start)/1000);
+ const h=String(Math.floor(sec/3600)).padStart(2,'0');
+ const m=String(Math.floor(sec%3600/60)).padStart(2,'0');
+ const s=String(sec%60).padStart(2,'0');
+ document.getElementById('counter').textContent=`${h}:${m}:${s}`;
+},1000);
+
+// subtle star field, no external assets
+const c=document.getElementById('sky'),ctx=c.getContext('2d');
+let stars=[];
+function resize(){c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);stars=Array.from({length:Math.min(120,Math.floor(innerWidth/5))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.2+.2,a:Math.random()}))}
+function draw(){
+ ctx.clearRect(0,0,innerWidth,innerHeight);
+ stars.forEach(p=>{p.a+=.01;ctx.globalAlpha=.2+.25*(Math.sin(p.a)+1)/2;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle="#fff";ctx.fill()});
+ requestAnimationFrame(draw)
+}
+addEventListener('resize',resize);resize();draw();
+</script>
+</body>
+</html>
